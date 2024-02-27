@@ -21,12 +21,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 # Inherit from gts4lvwifi device
 $(call inherit-product, device/samsung/gts4lvwifi/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
+# Inherit some common risingOS stuff.
+$(call inherit-product, vendor/rising/config/rising.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := gts4lvwifi
-PRODUCT_NAME := lineage_gts4lvwifi
+PRODUCT_NAME := rising_gts4lvwifi
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-T720
 PRODUCT_MANUFACTURER := samsung
@@ -34,6 +34,17 @@ PRODUCT_MANUFACTURER := samsung
 PRODUCT_SYSTEM_NAME := gts4lvwifixx
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
+
+# RisingOS flags
+WITH_GMS := true
+TARGET_PREBUILT_PIXEL_LAUNCHER := true
+TARGET_ENABLE_PIXEL_FEATURES := true
+RISING_MAINTAINER := Youras65
+RISING_CHIPSET := Snapdragon670
+RISING_STORAGE := 64GB
+RISING_RAM := 4GB
+RISING_BATTERY := 7040mAh
+RISING_DISPLAY := 2560×1600
 
 # Use the latest approved GMS identifiers
 PRODUCT_BUILD_PROP_OVERRIDES += \
